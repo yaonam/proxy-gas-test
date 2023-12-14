@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 
+import "@openzeppelin/contracts/proxy/Clones.sol";
+
 contract Implementation {
     uint256 public number;
 
@@ -9,6 +11,10 @@ contract Implementation {
     }
 }
 
-contract StorageProxy {}
+contract StorageProxy {
+    address implementation;
+}
 
-contract EIP1167Proxy {}
+contract EIP1167Proxy {
+    constructor() {}
+}
